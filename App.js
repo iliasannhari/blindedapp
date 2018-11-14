@@ -10,7 +10,7 @@ const store = createStore(reducers, middleware);
 export default class App extends React.Component {
 
   render() {
-    //disable  warning box 
+    //disable  warning box  
     console.disableYellowBox = true;
 
     return (
