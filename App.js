@@ -10,7 +10,9 @@ const store = createStore(reducers, middleware);
 export default class App extends React.Component {
 
   render() {
+    
   	console.disableYellowBox = true;
+
     return (
       <Provider store={store}>
         <Login/>
