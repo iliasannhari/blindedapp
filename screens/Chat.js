@@ -16,7 +16,7 @@ class Chat extends React.Component {
       snap.forEach((child) => {
         if(child.val().key != 'user'){
           item = child.val();
-          items.push(item); 
+          items.push(item);
         }
       });
       this.setState({ messages: items.reverse() });
@@ -25,6 +25,13 @@ class Chat extends React.Component {
 
 
   onSend(messages = []) {
+    this.props.dispatch(
+      sendNotification(
+        this.props.navigation.state.params.user.id,
+        messages[0].user.name,
+        messages[0].text
+      )
+    ) 
     this.setState(previousState => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }))

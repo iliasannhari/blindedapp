@@ -3,8 +3,8 @@ import styles from '../styles';
 import { connect } from 'react-redux';
 import * as firebase from 'firebase';
 
-import { 
-  Text, 
+import {
+  Text,
   View,
   ScrollView,
   TouchableOpacity,
@@ -21,13 +21,13 @@ class Matches extends React.Component {
       var items = [];
       snap.forEach((child) => {
         item = child.val();
-        items.push(item); 
+        items.push(item);
       });
       this.setState({ chats: items.reverse() });
     });
   }
 
-  
+
 
   render() {
     return (
