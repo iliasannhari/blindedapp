@@ -11,7 +11,16 @@ var styles = StyleSheet.create({
   },
   color: {
     color: '#df4723',
-    
+
+  },
+  logo: {
+    width: 100,
+    height: 55,
+    marginTop: 50
+  },
+  nav: {
+    color: '#fbbe2d',
+    marginTop: 50
   },
   center: {
     alignItems: 'center',
@@ -77,7 +86,7 @@ var styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   form: {
-    
+
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -97,7 +106,7 @@ var styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
   },
-  
+
 })
 
 module.exports = styles

@@ -25,7 +25,7 @@ export function login(user){
 		firebase.database().ref('cards/').child(user.uid).once('value', function(snapshot){
 		  if(snapshot.val() !== null){
 		    dispatch({ type: 'LOGIN', user: snapshot.val(), loggedIn: true });
-        dispatch(allowNotifications());
+        dispatch(allowNotifications())
 		  } else {
  		    firebase.database().ref('cards/' + user.uid ).update(params);
 		    dispatch({ type: 'LOGIN', user: params, loggedIn: true });
@@ -88,16 +88,17 @@ export function getLocation(){
 }
 
 
+
 export function allowNotifications(){
 	return function(dispatch){
-    Permissions.getAsync(Permissions.NOTIFICATIONS).then(function(result){
-      if (result.status === 'granted') {
-        Notifications.getExpoPushTokenAsync().then(function(token){
-          firebase.database().ref('cards/' + firebase.auth().currentUser.uid ).update({ token: token });
-          dispatch({ type: 'ALLOW_NOTIFICATIONS', payload: token });
-        })
-      }
-    })
+		Permissions.getAsync(Permissions.NOTIFICATIONS).then(function(result){
+		  if (result.status === 'granted') {
+		    Notifications.getExpoPushTokenAsync().then(function(token){
+		      firebase.database().ref('cards/' + firebase.auth().currentUser.uid ).update({ token: token });
+		      dispatch({ type: 'ALLOW_NOTIFICATIONS', payload: token });
+		    })
+		  }
+		})
 	}
 }
 
@@ -116,7 +117,6 @@ export function sendNotification(id, name, text){
             to: snap.val().token,
             title: name,
             body: text,
-            badge: 1,
           }),
         });
 

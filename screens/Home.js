@@ -7,8 +7,8 @@ import SwipeCards from 'react-native-swipe-cards'
 import Cards from '../components/Cards.js'
 import NoCards from '../components/NoCards.js'
 
-import { 
-  Text, 
+import {
+  Text,
   View,
   Image
 } from 'react-native';

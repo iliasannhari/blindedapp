@@ -16,6 +16,7 @@
     "native-base": "^2.8.1",
     "node": "^9.9.0",
     "react": "16.3.1",
+    "react-ionicons": "^2.1.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
     "react-native-aws3": "0.0.8",
     "react-native-gifted-chat": "^0.4.3",
@@ -24,5 +25,8 @@
     "react-redux": "^5.1.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1"
   }
 }

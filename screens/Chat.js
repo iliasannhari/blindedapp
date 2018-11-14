@@ -24,6 +24,8 @@ class Chat extends React.Component {
   }
 
 
+
+
   onSend(messages = []) {
     this.props.dispatch(
       sendNotification(
@@ -31,13 +33,12 @@ class Chat extends React.Component {
         messages[0].user.name,
         messages[0].text
       )
-    ) 
+    )
     this.setState(previousState => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }))
     firebase.database().ref('cards/' + this.props.user.id + '/chats/' + this.props.navigation.state.params.user.id).push(messages[0]);
     firebase.database().ref('cards/' + this.props.navigation.state.params.user.id + '/chats/' + this.props.user.id).push(messages[0]);
-
   }
 
 
