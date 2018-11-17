@@ -20,7 +20,6 @@ export default reducers = (state = {
     switch (action.type) {
 
       case 'LOGIN': {
-        console.log('ok');
         return { ...state, user: action.user, loggedIn: action.loggedIn }
       }
       case 'LOGOUT': {

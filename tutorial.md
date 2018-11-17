@@ -58,7 +58,7 @@ npm install -g exp
 npm install -g create-react-native-app
 create-react-native-app Tinder
 cd Tinder
-npm start or yarn start 
+npm start or yarn start
 ```
 
 Developer Tools Simulator (command + D)
@@ -108,8 +108,8 @@ Test.js
 import React from 'react';
 import styles from '../styles'
 
-import { 
-  Text, 
+import {
+  Text,
   View
 } from 'react-native';
 
@@ -264,7 +264,7 @@ export default class RootNavigator extends React.Component {
 ## Class 4 - Redux Integration
 
 ```
-npm install --save redux redux-thunk react-redux 
+npm install --save redux redux-thunk react-redux
 ```
 actions.js
 ```
@@ -286,7 +286,7 @@ export default reducers = (state = {
       }
     }
     return state;
-} 
+}
 ```
 
 App.js
@@ -381,7 +381,7 @@ App.json
 }
 ```
 
-App.js - Login function 
+App.js - Login function
 ```
 login = async () => {
   const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('APPID', {
@@ -790,7 +790,7 @@ firebase.database().ref('cards').once('value', (snap) => {
   snap.forEach((child) => {
     item = child.val();
     item.id = child.key;
-    items.push(item); 
+    items.push(item);
   });
   dispatch({ type: 'GET_CARDS', payload: items });
 });
@@ -899,7 +899,7 @@ firebase.database().ref('cards/' + this.props.user.id + '/chats').on('value', (s
   var items = [];
   snap.forEach((child) => {
     item = child.val();
-    items.push(item); 
+    items.push(item);
   });
   this.setState({ chats: items.reverse() });
 });
@@ -954,7 +954,7 @@ componentWillMount() {
     snap.forEach((child) => {
       if(child.val().key != 'user'){
         item = child.val();
-        items.push(item); 
+        items.push(item);
       }
     });
     this.setState({ messages: items.reverse() });
@@ -1124,8 +1124,8 @@ Chat.js
 ```
 this.props.dispatch(
   sendNotification(
-    this.props.navigation.state.params.user.id, 
-    messages[0].user.name, 
+    this.props.navigation.state.params.user.id,
+    messages[0].user.name,
     messages[0].text
   )
 )
@@ -1191,17 +1191,3 @@ app.json
   }
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
