@@ -57,8 +57,6 @@ export function getCards(geocode){
 	return function(dispatch){
 		firebase.database().ref('cards').orderByChild("geocode").equalTo(geocode).once('value', (snap) => {
 		  var items = [];
-      console.log('this is get card');
-      console.log(firebase.auth().currentUser.uid);
 
 		  snap.forEach((child) => {
 		    item = child.val();
