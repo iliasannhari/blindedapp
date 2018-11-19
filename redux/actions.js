@@ -24,11 +24,11 @@ export function login(user){
 
 		firebase.database().ref('cards/').child(user.uid).once('value', function(snapshot){
 		  if(snapshot.val() !== null){
-		    dispatch({ type: 'LOGIN', user: snapshot.val(), loggedIn: true });
-        dispatch(allowNotifications())
+        dispatch({ type: 'LOGIN', user: snapshot.val(), loggedIn: true });
 		  } else {
  		    firebase.database().ref('cards/' + user.uid ).update(params);
 		    dispatch({ type: 'LOGIN', user: params, loggedIn: true });
+        dispatch(allowNotifications())
 		  }
 		  dispatch(getLocation())
 		})
@@ -86,9 +86,6 @@ export function getLocation(){
 		})
 	}
 }
-
-
-
 export function allowNotifications(){
 	return function(dispatch){
 		Permissions.getAsync(Permissions.NOTIFICATIONS).then(function(result){
@@ -101,6 +98,9 @@ export function allowNotifications(){
 		})
 	}
 }
+
+
+
 
 export function sendNotification(id, name, text){
   return function(dispatch){
