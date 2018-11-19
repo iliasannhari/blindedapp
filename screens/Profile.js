@@ -2,10 +2,10 @@ import React from 'react';
 import styles from '../styles'
 import { connect } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
-import { uploadImages, deleteImage, updateAbout, logout } from '../redux/actions'
+import { updateAbout, logout } from '../redux/actions'
 
-import { 
-  Text, 
+import {
+  Text,
   View,
   Image,
   TouchableOpacity,
@@ -15,24 +15,17 @@ import {
 
 class Profile extends React.Component {
 
-  deleteImage(){
-    this.self.props.dispatch(deleteImage(this.self.props.user.images, this.key))
-  }
-
-  addImage(){
-    this.props.dispatch(uploadImages(this.props.user.images))
-  }
 
   render() {
     return (
-      
+
         <ScrollView>
           <View style={[styles.container, styles.center]}>
             <View style={styles.container}>
               <Image style={styles.img} source={{uri: this.props.user.photoUrl}}/>
               <Text style={[styles.center, styles.bold]} >{this.props.user.name}</Text>
             </View>
-            
+
             <Text style={styles.bold}>About</Text>
             <TextInput
               style={styles.textInput}

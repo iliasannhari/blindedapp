@@ -27,6 +27,7 @@ class Chat extends React.Component {
 
 
   onSend(messages = []) {
+    // send notification when someone send a message
     this.props.dispatch(
       sendNotification(
         this.props.navigation.state.params.user.id,

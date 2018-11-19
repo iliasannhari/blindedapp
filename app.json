@@ -14,7 +14,7 @@
     "splash": {
       "image": "./assets/blinded-splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#fbbe2d"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

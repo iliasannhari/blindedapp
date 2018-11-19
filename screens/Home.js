@@ -19,16 +19,16 @@ class Home extends React.Component {
   componentWillMount(){
     this.props.dispatch(getCards(this.props.user.geocode))
   }
-
+  // swipe yes
   handleYup (card) {
     firebase.database().ref('cards/' + this.props.user.id + '/swipes').update({ [card.id]: true });
     this.checkMatch(card)
   }
-
+  // swipe no
   handleNope (card) {
     firebase.database().ref('cards/' + this.props.user.id + '/swipes').update({ [card.id]: false });
   }
-
+  // check match - if true both create chat
   checkMatch(card){
     firebase.database().ref('cards/' + card.id + '/swipes/' + this.props.user.id).once('value', (snap) => {
       if(snap.val() == true){

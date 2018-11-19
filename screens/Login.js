@@ -32,9 +32,11 @@ class Login extends React.Component {
     })
   }
 
+
+  // Login facebook
   login = async () => {
 
-    //ENTER YOUR APP ID
+    //ENTER YOUR APP ID Here
     const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('2121167294866319', { permissions: ['public_profile'] })
     if (type == 'success') {
 

@@ -30,7 +30,6 @@ export function login(user){
 		  } else {
  		    firebase.database().ref('cards/' + user.uid ).update(params);
 		    dispatch({ type: 'LOGIN', user: params, loggedIn: true });
-        dispatch(allowNotifications());
 		  }
 		  dispatch(getLocation());
 		})
