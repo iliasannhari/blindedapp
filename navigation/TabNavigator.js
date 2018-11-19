@@ -24,7 +24,7 @@ export default TabNavigator(
       navigationOptions: {
         tabBarLabel: ' ',
         tabBarIcon: ({focused}) => (
-          <Image style={ styles.logo } source={require('../assets/tinder-logo.png')}/>
+          <Image style={ styles.logo } source={require('../assets/blinded-logo.png')}/>
         ),
       }
     },

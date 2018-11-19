@@ -7,8 +7,8 @@ import * as firebase from 'firebase';
 import firebaseConfig from '../config/firebase.js'
 firebase.initializeApp(firebaseConfig);
 
-import { 
-  Text, 
+import {
+  Text,
   View,
   TouchableOpacity,
   Image
@@ -18,7 +18,7 @@ import { Container, Content, Header, Form, Input, Item, Button, Label } from 'na
 
 
 class Login extends React.Component {
-  
+
   state = {}
 
 
@@ -29,12 +29,12 @@ class Login extends React.Component {
         this.props.dispatch(login(user))
         console.log("We are authenticated now!" + JSON.stringify(user.displayName));
       }
-    })  
+    })
   }
 
   login = async () => {
 
-    //ENTER YOUR APP ID 
+    //ENTER YOUR APP ID
     const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('2121167294866319', { permissions: ['public_profile'] })
     if (type == 'success') {
 
@@ -56,7 +56,7 @@ class Login extends React.Component {
         <Container style={styles.container}>
           <Form style={styles.form}>
 
-            <Image style={ styles.loginlogo } source={require('../assets/blinded-logo.png')}/>
+            <Image style={ styles.loginlogo } source={require('../assets/blinded-logo-login.png')}/>
 
             <TouchableOpacity onPress={this.login.bind(this)}>
               <Text style={ styles.buttonLogin }>Log in with Facebook</Text>
@@ -70,11 +70,11 @@ class Login extends React.Component {
 
       );
     }
-    
+
   }
 
 
- 
+
 
 
 }

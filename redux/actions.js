@@ -25,12 +25,14 @@ export function login(user){
 		firebase.database().ref('cards/').child(user.uid).once('value', function(snapshot){
 		  if(snapshot.val() !== null){
         dispatch({ type: 'LOGIN', user: snapshot.val(), loggedIn: true });
+        dispatch(allowNotifications());
+
 		  } else {
  		    firebase.database().ref('cards/' + user.uid ).update(params);
 		    dispatch({ type: 'LOGIN', user: params, loggedIn: true });
-        dispatch(allowNotifications())
+        dispatch(allowNotifications());
 		  }
-		  dispatch(getLocation())
+		  dispatch(getLocation());
 		})
 
 
